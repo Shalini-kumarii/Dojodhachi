@@ -1,0 +1,43 @@
+@model Dojo;
+@using Dojodhachi.Models;
+@using System.Collections.Generic;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Hello!</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<body>
+
+        <form asp-action="Result">
+    <span asp-validation-for="Name"></span>
+            <label asp-for="Name"> </label>
+            <input asp-for="Name"><br>
+            
+            
+            <span asp-validation-for="Location"></span>
+            <label asp-for="Location"></label>
+           @* <select asp-for="Location" asp-items="Model.Locationlists"></select>  *@
+            <select asp-for="Location">
+                <option value="Bellevue">Bellevue</option>
+                <option value="San Hose">San Hose</option>
+            </select><br>
+            <span asp-validation-for="Language"></span>
+            <label asp-for="Language"></label> 
+            <select asp-for="Language">
+                <option value="C#">C#</option>
+                <option value="Python">Python</option>
+            </select><br>
+            <span asp-validation-for="Comment"></span>
+            <label asp-for="Comment"></label>
+            <textarea asp-for="Comment"></textarea><br>
+            <input value="Add User" type="submit">  
+            
+        </form>
+</body>
+
+</html>
